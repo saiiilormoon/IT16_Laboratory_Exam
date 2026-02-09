@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Identity Cipher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-gradient"></div>
+    
+    <div class="wrapper">
+        <div class="cipher-container">
+            <!-- Header -->
+            <div class="cipher-header">
+                <div class="header-badge">SECURITY LAB</div>
+                <h1 class="main-title">Cipher Engine</h1>
+                <p class="header-desc">Caesar Cipher Encryption Tool</p>
+            </div>
+
+            <!-- Main Content -->
+            <div class="cipher-content">
+                <!-- Step 1: Input Data -->
+                <div class="cipher-card">
+                    <div class="card-header">
+                        <span class="step-number">1</span>
+                        <h2 class="card-title">Student Data</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="input-row">
+                            <input type="text" id="fullName" placeholder="Full Name" class="input-field">
+                        </div>
+                        <div class="input-row">
+                            <input type="text" id="year" placeholder="Year Level" class="input-field">
+                        </div>
+                        <div class="input-row">
+                            <input type="text" id="course" placeholder="Course" class="input-field">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Encryption Key -->
+                <div class="cipher-card">
+                    <div class="card-header">
+                        <span class="step-number">2</span>
+                        <h2 class="card-title">Encryption Settings</h2>
+                    </div>
+                    <div class="card-body">
+                        <label class="key-label">Shift Value (1-25)</label>
+                        <input type="number" id="key" placeholder="Enter shift value" class="key-field" min="1" max="25">
+                        <div class="key-visual">
+                            <div class="key-display">Key: <span id="keyDisplay">-</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Actions -->
+                <div class="cipher-card">
+                    <div class="card-header">
+                        <span class="step-number">3</span>
+                        <h2 class="card-title">Actions</h2>
+                    </div>
+                    <div class="card-body action-body">
+                        <button onclick="encrypt()" class="action-btn encrypt-btn">Encrypt</button>
+                        <button onclick="decrypt()" class="action-btn decrypt-btn">Decrypt</button>
+                        <button onclick="clearAll()" class="action-btn clear-btn">Clear All</button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Results -->
+                <div class="cipher-card result-card">
+                    <div class="card-header">
+                        <span class="step-number">4</span>
+                        <h2 class="card-title">Results</h2>
+                    </div>
+                    <div class="card-body result-body">
+                        <div class="result-section">
+                            <label class="result-label">Plaintext</label>
+                            <textarea id="plaintext" readonly class="result-textarea"></textarea>
+                        </div>
+                        <div class="result-section">
+                            <label class="result-label">Ciphertext</label>
+                            <textarea id="result" readonly class="result-textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="cipher-footer">
+                <p>Caesar Cipher: Each letter shifts by the key value | Non-alphabetic characters remain unchanged</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
